@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+/**
+ * @author Craig Thayer <cthayer@sazze.com>
+ * @copyright 2015 Sazze, Inc.
+ */
+
+var _ = require('lodash');
+var app = new (require('../'))();
+
+process.on('message', function (msg) {
+  if (!_.isString(msg) || msg != 'shutdown') {
+    return;
+  }
+
+  app.stop.call(app);
+});
+
+process.on('SIGINT', app.stop.bind(app));
+process.on('SIGTERM', app.stop.bind(app));
+
+app.start();
