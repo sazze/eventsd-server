@@ -1,6 +1,6 @@
 {
   "name": "sz-eventsd-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "eventsd server",
   "main": "app.js",
   "scripts": {
