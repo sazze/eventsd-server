@@ -2,9 +2,41 @@
 
 Eventsd service
 
+Supports publishing eventsd messages to the following messaging services:
+
+* rabbitMQ (type: amqp)
+* Google Cloud Pubsub (type: gcloud)
+
 ##Config
 
-Must set the following environment variables:
+Specify a optional JSON configuration file:
+
+```bash
+eventsd -c path/to/config.json
+```
+The configuration file should have the following format (defaults shown):
+
+```javascript
+{
+    "udpServer": {
+        "port": 8150,
+        "host": "0.0.0.0"
+    },
+    "publisher": {
+        "type": "amqp",
+        "options": {
+            "host": "127.0.0.1",
+            "port": 5672,
+            "user": "guest",
+            "password": "guest"
+        }
+    }
+}
+```
+
+##Environment Variables
+
+The following environment variables are also available:
 
 ```bash
 # for firehose connection

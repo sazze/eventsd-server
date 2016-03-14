@@ -2,11 +2,47 @@
 
 /**
  * @author Craig Thayer <cthayer@sazze.com>
- * @copyright 2015 Sazze, Inc.
  */
 
 var _ = require('lodash');
-var app = new (require('../'))();
+var commandLineArgs = require('command-line-args');
+var path = require('path');
+
+var cli = commandLineArgs([
+  {name: 'help', alias: 'h', type: Boolean},
+  {name: 'conf', alias: 'c', type: String, defaultOption: true}
+]);
+
+var cliOpts = cli.parse();
+
+if (cliOpts.help) {
+  console.log(cli.getUsage());
+  process.exit(0);
+}
+
+var options = {};
+
+if (cliOpts.conf) {
+  try {
+    options = require(path.resolve(cliOpts.conf));
+  } catch (e) {
+    if (e instanceof SyntaxError) {
+      console.error(path.resolve(cliOpts.conf) + ' is an invalid configuration format.  Must be JSON');
+    } else {
+      console.error('Cannot find ' + path.resolve(cliOpts.conf) + '. Using default configuration.');
+    }
+  }
+}
+
+if (!_.isPlainObject(options)) {
+  if (cliOpts.conf) {
+    console.error(path.resolve(cliOpts.conf) + ' is an invalid configuration format.  Must be JSON');
+  }
+
+  options = {};
+}
+
+var app = new (require('../'))(options);
 
 process.on('message', function (msg) {
   if (!_.isString(msg) || msg != 'shutdown') {
