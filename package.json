@@ -22,6 +22,7 @@
   "author": "Craig Thayer <cthayer@sazze.com>",
   "license": "ISC",
   "dependencies": {
+    "command-line-args": "^2.1.6",
     "debug": "=2.2.0",
     "gcloud": "^0.29.0",
     "lodash": "=3.10.1",

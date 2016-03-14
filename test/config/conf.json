@@ -1,0 +1,5 @@
+{
+  "publisher": {
+    "type": "amqp"
+  }
+}
