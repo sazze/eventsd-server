@@ -2,7 +2,6 @@
 
 /**
  * @author Craig Thayer <cthayer@sazze.com>
- * @copyright 2015 Sazze, Inc.
  */
 
 var _ = require('lodash');

@@ -20,9 +20,10 @@
     "firehose"
   ],
   "author": "Craig Thayer <cthayer@sazze.com>",
-  "license": "Copyright 2015 by Sazze, Inc.  All rights reserved",
+  "license": "ISC",
   "dependencies": {
     "debug": "=2.2.0",
+    "gcloud": "^0.29.0",
     "lodash": "=3.10.1",
     "sz-amqp": "=1.2.3",
     "sz-eventsd": "0.0.2",

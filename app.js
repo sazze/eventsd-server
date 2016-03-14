@@ -12,7 +12,10 @@ var UdpServer = require('./lib/udpServer');
 function Main(options) {
   this.options = {
     udpServer: {},
-    publisher: {}
+    publisher: {
+      type: 'amqp',
+      options: {}
+    }
   };
 
   if (!_.isPlainObject(options)) {
@@ -28,7 +31,7 @@ function Main(options) {
 
 Main.prototype.start = function () {
   // start the publisher
-  this.publisher = require('./lib/publisher')(this.options.publisher);
+  this.publisher = require('./lib/publisher')(this.options.publisher.type, this.options.publisher.options);
 
   // listen for messages
   this.udpServer = new UdpServer(this.options.udpServer);
