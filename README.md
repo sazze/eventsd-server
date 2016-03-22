@@ -1,4 +1,4 @@
-#eventsd
+#eventsd-server
 
 Eventsd service
 
@@ -10,7 +10,7 @@ Supports publishing eventsd messages to the following messaging services:
 ## Install
 
 ```bash
-npm install -g sz-eventsd-server
+npm install -g eventsd-server
 ```
 
 ##Config
