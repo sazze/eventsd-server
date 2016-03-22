@@ -1,5 +1,8 @@
 {
   "publisher": {
-    "type": "amqp"
+    "type": "gcloud"
+  },
+  "consumer": {
+    "type": "gcloud"
   }
 }
