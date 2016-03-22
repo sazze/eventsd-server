@@ -1,13 +1,10 @@
 {
-  "name": "sz-eventsd-server",
+  "name": "eventsd-server",
   "version": "1.2.0",
   "description": "eventsd server",
   "main": "app.js",
   "scripts": {
     "test": "make test"
-  },
-  "publishConfig": {
-    "registry": "http://npm.sazze.com/"
   },
   "repository": {
     "type": "git",
@@ -17,7 +14,8 @@
     "eventsd",
     "logs",
     "events",
-    "firehose"
+    "firehose",
+    "server"
   ],
   "author": "Craig Thayer <cthayer@sazze.com>",
   "license": "ISC",
