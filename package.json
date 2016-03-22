@@ -3,12 +3,13 @@
   "version": "1.2.0",
   "description": "eventsd server",
   "main": "app.js",
+  "homepage": "https://github.com/sazze/node-eventsd-server",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "http://gitlab.sazze.com/ops/eventsd"
+    "url": "https://github.com/sazze/node-eventsd-server.git"
   },
   "keywords": [
     "eventsd",
@@ -17,6 +18,9 @@
     "firehose",
     "server"
   ],
+  "bugs": {
+    "url": "https://github.com/sazze/node-eventsd-server/issues"
+  },
   "author": "Craig Thayer <cthayer@sazze.com>",
   "license": "ISC",
   "dependencies": {
@@ -34,5 +38,17 @@
   },
   "bin": {
     "eventsd": "./bin/eventsd"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Craig Thayer",
+      "email": "cthayer@sazze.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Craig Thayer",
+      "email": "cthayer@sazze.com"
+    }
+  ]
 }
