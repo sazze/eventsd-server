@@ -10,13 +10,22 @@ var path = require('path');
 
 var cli = commandLineArgs([
   {name: 'help', alias: 'h', type: Boolean},
-  {name: 'conf', alias: 'c', type: String, defaultOption: true}
+  {name: 'conf', alias: 'c', type: String, defaultOption: true},
+  {name: 'version', type: Boolean}
 ]);
 
 var cliOpts = cli.parse();
 
 if (cliOpts.help) {
   console.log(cli.getUsage());
+  console.log('');
+  console.log('version: ' + require('../package.json').version);
+
+  process.exit(0);
+}
+
+if (cliOpts.version) {
+  console.log('version: ' + require('../package.json').version);
   process.exit(0);
 }
 
