@@ -1,6 +1,6 @@
 {
   "name": "eventsd-server",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "eventsd server",
   "main": "app.js",
   "homepage": "https://github.com/sazze/node-eventsd-server",
@@ -24,14 +24,13 @@
   "author": "Craig Thayer <cthayer@sazze.com>",
   "license": "ISC",
   "dependencies": {
+    "@sazze/amqp": "=1.4.0",
+    "@sazze/stats": "=1.4.0",
     "command-line-args": "^2.1.6",
     "debug": "=2.2.0",
-    "gcloud": "^0.29.0",
-    "lodash": "=3.10.1",
-    "socket.io": "^1.4.5",
-    "@sazze/amqp": "=1.4.0",
     "eventsd": "=0.1.2",
-    "@sazze/stats": "=1.4.0"
+    "lodash": "=3.10.1",
+    "socket.io": "^1.4.5"
   },
   "devDependencies": {
     "socket.io-client": "^1.4.5"
