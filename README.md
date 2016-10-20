@@ -5,7 +5,8 @@ Eventsd service
 Supports publishing eventsd messages to the following messaging services:
 
 * rabbitMQ (type: amqp)
-* Google Cloud Pubsub (type: gcloud)
+
+New services can be added using the internal pluggable messaging service interface.
 
 ## Install
 
@@ -37,7 +38,11 @@ The configuration file should have the following format (defaults shown):
             "host": "127.0.0.1",
             "port": 5672,
             "user": "guest",
-            "password": "guest"
+            "password": "guest",
+            "vhost": "/",
+            "ssl": {
+                "enable": false
+            }
         }
     },
     "consumer": {
@@ -46,7 +51,11 @@ The configuration file should have the following format (defaults shown):
             "host": "127.0.0.1",
             "port": 5672,
             "user": "guest",
-            "password": "guest"
+            "password": "guest",
+            "vhost": "/",
+            "ssl": {
+                "enable": false
+            }
         }
     },
     "publisherOnly": false,
@@ -75,25 +84,6 @@ DEBUG   # default: "error,warn,info".  Use "debug" and/or "verbose" for more log
 ```
 
 ##Testing
-
-**gcloud**
-
-Use the gcloud pubsub emulator to run tests on your local machine.
-
-To start the emulator:
-
-```bash
-gcloud beta emulators pubsub start --host-port 127.0.0.1:8268
-```
-
-Set the environment for the eventsd server:
-
-```bash
-export PUBSUB_EMULATOR_HOST=127.0.0.1:8268
-export GCLOUD_PROJECT=emulator
-```
-
-For more details, see [https://github.com/GoogleCloudPlatform/gcloud-common/issues/48](https://github.com/GoogleCloudPlatform/gcloud-common/issues/48)
 
 **amqp**
 

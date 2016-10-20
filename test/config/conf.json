@@ -1,8 +1,0 @@
-{
-  "publisher": {
-    "type": "gcloud"
-  },
-  "consumer": {
-    "type": "gcloud"
-  }
-}
